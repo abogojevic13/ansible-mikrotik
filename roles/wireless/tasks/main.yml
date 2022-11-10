@@ -1,0 +1,10 @@
+---
+- name: Wireless interfaces setup WLAN1
+  routeros_command:
+    commands:
+      - /interface wireless set [ find default-name=wlan1 ] band=2ghz-b/g/n channel-width=20/40mhz-Ce country=serbia disabled=no frequency=auto frequency-mode=superchannel mode=ap-bridge security-profile=SEC_PROFILE ssid="WIFI_NAME 2.4G" wireless-protocol=802.11 wps-mode=disabled
+
+- name: Wireless interfaces setup WLAN2
+  routeros_command:
+    commands:
+      - /interface wireless set [ find default-name=wlan2 ] band=5ghz-onlyac channel-width=20/40/80mhz-eCee country=serbia disabled=no frequency=auto frequency-mode=superchannel mode=ap-bridge security-profile=SEC_PROFILE ssid="WIFI_NAME 5G" wireless-protocol=802.11 wps-mode=disabled

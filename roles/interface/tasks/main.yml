@@ -1,0 +1,13 @@
+---
+- name: Comment interfaces
+  routeros_command:
+    commands:
+      - interface/set "{{ item.number }}" comment="{{ item.comment }}" disabled="{{ item.dis }}" 
+  with_items:
+    - { number: 'ether1', comment: 'IN', dis: 'no' }
+    - { number: 'ether2', comment: 'Free', dis: 'yes' }
+    - { number: 'ether3', comment: 'Free', dis: 'yes' }
+    - { number: 'ether4', comment: 'Free', dis: 'yes' }
+    - { number: 'ether5', comment: 'Free', dis: 'yes' }
+    - { number: 'wlan1', comment: '2.4G Network', dis: 'no' }
+    - { number: 'wlan2', comment: '5G Network', dis: 'no'}
